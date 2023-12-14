@@ -93,7 +93,7 @@ input[type=button].primary,
 input[type=submit].primary,
 input[type=reset].primary,
 button.primary {
-  background: #1890FF;
+  background: color: #F5222D;;
   border: 1px solid #1890FF;
   color: white;
 }

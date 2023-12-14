@@ -456,6 +456,8 @@ hotkey i {
 .ui .button.primary {
     background: rgb(24, 144, 255);
     border-color: rgb(24, 144, 255);
+    /* background: #F5222D;; */
+    /* border-color: #52C1FF; */
     color: #fff;
 }
 .ui .button.primary:hover {
@@ -465,7 +467,9 @@ hotkey i {
 }
 .ui .button.primary:focus {
     background: rgb(13, 154, 255);
-    border-color: rgb(24, 156, 255);
+    border-color: rgb(24, 156, 255); 
+    /* background: #52C1FF;
+    border-color: #52C1FF; */
     color: #fff;
 }
 .ui .button.positive {

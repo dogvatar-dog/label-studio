@@ -15,6 +15,7 @@
   text-align: center;
   margin-top: 24px;
   color: #8C8C8C;
+  /* color: #FFF; */
 }
 .login_page img {
   margin: 32px auto 50px;
@@ -50,7 +51,8 @@
 }
 .login_page .toggle > *.active {
   border-color: #1890FF;
-  color: #1890FF;
+  /* color: #1890FF; */
+  color: #F5222D;
 }
 .login_page .toggle > *:hover {
   color: #69C0FF;
@@ -114,13 +116,15 @@ html, body {
 
 .login_page_new_ui .left {
   flex: 1;
-  background: linear-gradient(109.47deg, rgba(255, 166, 99, 0.15) 0%, rgba(255, 117, 87, 0.15) 51.56%, rgba(227, 123, 211, 0.15) 100%);
+  /* background: linear-gradient(109.47deg, rgba(82, 193, 255, 0.5) 0%, rgba(132, 210, 81, 0.5) 51.56%, rgba(233, 232, 82, 0.5) 100%); */
+  background-color: #171717;
   height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
   align-items: center;
+  
 }
 
 .login_page_new_ui .left:after {
@@ -128,13 +132,26 @@ html, body {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 179px;
-  height: 239px;
-  background: url('../images/login-bg.svg') no-repeat center center;
+  width: 500px;
+  height: 500px;
+  background: url('../images/dogandgirl.svg') no-repeat center center;
   background-size: contain;
 }
 
+
+.login_page_new_ui .left h1 {
+  color:#FFF;
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin: 0;
+  padding: 0px 20px;
+}
+
 .login_page_new_ui .left h2 {
+  color:#FFF;
   font-size: 24px;
   font-weight: 500;
   line-height: 32px;
@@ -143,7 +160,10 @@ html, body {
   margin: 0;
 }
 
+
+
 .login_page_new_ui .left h3 {
+  color:#FFF;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -152,13 +172,17 @@ html, body {
   margin: 8px 0 0 0;
 }
 
-.login_page_new_ui .left .logo_humansignal{
+.login_page_new_ui .left .woof_works {
+  margin-top: 200px;
+}
+
+.login_page_new_ui .left .logo_dogvatar{
   position: absolute;
   bottom: 60px;
   left: 60px;
   display: flex;
   flex-direction: column;
-  color: #000;
+  color: #FFF;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
