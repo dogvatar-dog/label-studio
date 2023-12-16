@@ -15,7 +15,7 @@ RUN yarn config set network-timeout 1200000 # HTTP timeout used when downloading
 
 RUN --mount=type=cache,target=$NPM_CACHE_LOCATION,uid=1001,gid=0 \
     yarn install --frozen-lockfile \
- && yarn run build:production
+    && yarn run build:production
 
 FROM ubuntu:22.04
 
@@ -32,12 +32,12 @@ WORKDIR $LS_DIR
 
 # install packages
 RUN set -eux \
- && apt-get update \
- && apt-get install --no-install-recommends --no-install-suggests -y \
+    && apt-get update \
+    && apt-get install --no-install-recommends --no-install-suggests -y \
     build-essential postgresql-client libmysqlclient-dev mysql-client python3-pip python3-dev \
     git libxml2-dev libxslt-dev zlib1g-dev gnupg curl lsb-release libpq-dev dnsutils vim && \
     apt-get purge --assume-yes --auto-remove --option APT::AutoRemove::RecommendsImportant=false \
-     --option APT::AutoRemove::SuggestsImportant=false && rm -rf /var/lib/apt/lists/* /tmp/*
+    --option APT::AutoRemove::SuggestsImportant=false && rm -rf /var/lib/apt/lists/* /tmp/*
 
 RUN --mount=type=cache,target=$PIP_CACHE_DIR,uid=1001,gid=0 \
     pip3 install --upgrade pip setuptools && pip3 install poetry uwsgi uwsgitop
@@ -48,7 +48,7 @@ RUN set -eux; \
     echo "deb https://nginx.org/packages/mainline/ubuntu/ $(lsb_release -cs) nginx" >> /etc/apt/sources.list && \
     apt-get update && apt-get install -y nginx && \
     apt-get purge --assume-yes --auto-remove --option APT::AutoRemove::RecommendsImportant=false \
-     --option APT::AutoRemove::SuggestsImportant=false && rm -rf /var/lib/apt/lists/* /tmp/* && \
+    --option APT::AutoRemove::SuggestsImportant=false && rm -rf /var/lib/apt/lists/* /tmp/* && \
     nginx -v
 
 COPY --chown=1001:0 deploy/default.conf /etc/nginx/nginx.conf
@@ -79,6 +79,9 @@ RUN python3 label_studio/manage.py collectstatic --no-input && \
     chmod -R g=u $LS_DIR
 
 ENV HOME=/label-studio
+
+# Ensure the docker-entrypoint.sh script is executable
+RUN chmod +x ./deploy/docker-entrypoint.sh
 
 EXPOSE 8080
 

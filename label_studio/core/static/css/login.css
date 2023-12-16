@@ -130,8 +130,8 @@ html, body {
 .login_page_new_ui .left:after {
   content: '';
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 10%;
+  /* cente: 50%; */
   width: 500px;
   height: 500px;
   background: url('../images/dogandgirl.svg') no-repeat center center;
@@ -173,13 +173,13 @@ html, body {
 }
 
 .login_page_new_ui .left .woof_works {
-  margin-top: 200px;
+  margin-top: 150px;
 }
 
 .login_page_new_ui .left .logo_dogvatar{
   position: absolute;
   bottom: 60px;
-  left: 60px;
+  /* left: 60px; */
   display: flex;
   flex-direction: column;
   color: #FFF;
