@@ -1,46 +1,62 @@
-{% extends 'simple.html' %}
-{% load i18n %}
-{% load static %}
-{% load filters %}
-
-
+{% extends 'simple.html' %} {% load i18n %} {% load static %} {% load filters %}
 {% block head %}
-<link rel="stylesheet" href="{{ settings.HOSTNAME }}{% static 'css/login.css' %}"/>
+<link
+    rel="stylesheet"
+    href="{{ settings.HOSTNAME }}{% static 'css/login.css' %}"
+/>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129877673-1"></script>
+<script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=UA-129877673-1"
+></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-// gtag('config', 'UA-129877673-1');
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    // gtag('config', 'UA-129877673-1');
 </script>
-{% endblock %}
-
-{% block content %}
+{% endblock %} {% block content %}
 <div class="login_page_new_ui">
-  <div class="left">
-    
-    <img class="woof_works" src="{{ settings.HOSTNAME }}{% static 'images/whitewoof.svg' %}" height="93"  alt="Label Studio Logo"/>
-    <!-- <h1>Woof Works</h1> -->
-    <h3>Training Session Labeling for Guide Dogs of America</h3>
+    <div class="left">
+        <img
+            class="woof_works"
+            src="{{ settings.HOSTNAME }}{% static 'images/gdoa.svg' %}"
+            height="93"
+            alt="Guide Dogs of America logo"
+        />
+        <!-- <h1>Woof Works</h1> -->
+        <h3>Pup Training Session Response Labeling</h3>
 
-    <!-- {% include 'users/new-ui/user_tips.html' %} -->
+        <!-- {% include 'users/new-ui/user_tips.html' %} -->
 
-    <div class="logo_dogvatar">
-      Brought to you by
-      <img src="{{ settings.HOSTNAME }}{% static 'images/dogvatar_name_logo.svg' %}" height="22"  alt="Human Signal Logo"/>
+        <div class="logo_dogvatar">
+            Brought to you by
+            <img
+                src="{{ settings.HOSTNAME }}{% static 'images/dogvatar_name_logo.svg' %}"
+                height="32"
+                alt="Dogvatar logo"
+            />
+        </div>
     </div>
-  </div>
-  <div class="right">
-    <div class="toggle">
-        {% if not settings.DISABLE_SIGNUP_WITHOUT_LINK %}
-        <a href="{{ settings.HOSTNAME }}/user/signup" class="{% if 'signup' in request.path %}active{% endif %}">Sign up</a>
-        <a href="{{ settings.HOSTNAME }}/user/login" class="{% if 'login' in request.path %}active{% endif %}">Log in</a>
-        {% endif %}
+    <div class="right">
+        <div class="toggle">
+            {% if not settings.DISABLE_SIGNUP_WITHOUT_LINK %}
+            <a
+                href="{{ settings.HOSTNAME }}/user/signup"
+                class="{% if 'signup' in request.path %}active{% endif %}"
+                >Sign up</a
+            >
+            <a
+                href="{{ settings.HOSTNAME }}/user/login"
+                class="{% if 'login' in request.path %}active{% endif %}"
+                >Log in</a
+            >
+            {% endif %}
+        </div>
+        {% block user_content %}
     </div>
-    {% block user_content %}
-  </div>
 </div>
 
-  {% endblock %}
-{% endblock %}
+{% endblock %} {% endblock %}
