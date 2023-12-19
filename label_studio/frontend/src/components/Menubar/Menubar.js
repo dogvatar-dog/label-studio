@@ -156,7 +156,7 @@ export const Menubar = ({
                         >
                             <img
                                 src={absoluteURL(
-                                    "/static/images/blackwoof.svg"
+                                    "/static/images/gda_horizontal_logo.png"
                                 )}
                                 alt="Woof Works Logo"
                                 height="22"
